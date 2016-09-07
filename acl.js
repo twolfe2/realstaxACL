@@ -104,6 +104,19 @@ class User {
   }
 
   toJson() {
+    let userInfo = {
+      canRead: this.canRead,
+      canWrite: this.canWrite,
+      name: this.name,
+      userGroups: this.userGroups,
+      id: this.userId
+    }
+    try {
+      let output = Json.stringify(userInfo)
+    } catch {
+      console.log('Error stringifying!');
+    }
+    return output;
 
 
   }
